@@ -49,7 +49,8 @@ class Account {
 		  System.out.println("2.예금입금");
 		  System.out.println("3.예금출금");
 		  System.out.println("4.계좌생성");
-		  System.out.println("5.종료");
+		  System.out.println("5.예금리스트");
+		  System.out.println("6.종료");
 		  System.out.print("선택 :");
 		  num = sc.nextInt();
 		  if(num == 1) {
@@ -65,7 +66,11 @@ class Account {
 		  {
 			  creatAcc();
 		  }
-		  else if(num == 5) {
+		  else if(num == 5) 
+		  {
+			  listAcc();
+		  }
+		  else if(num == 6) {
 				System.out.println("프로그램종료");
 				break;
 			}
@@ -170,5 +175,13 @@ class Account {
 			System.out.print("예금주 : "); name[i]= sc.next();
 			System.out.print("비번 : "); pass[i]= sc.next();
 			System.out.print("입금액 : "); accmoney[i]= sc.nextInt();
+	}
+	void listAcc() 
+	{
+		for(int n = 0; n <account.length; n++)
+		{
+			System.out.print((n+1)+ "번 예금주 : "+ name[n]+ "계좌번호 : "+account[n]+"잔액 : "+accmoney[n]+"\n");
+		}
+		
 	}
 }
